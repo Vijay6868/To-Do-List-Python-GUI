@@ -6,6 +6,7 @@ os.system('clear')
 
 from Task import Task
 
+# creating object and testing all the methods
 task1= Task(1,"Finish snap","Work on Joe Snap")
 task1.taskNotes.append("this is my first note")
 task1.outPutTask(task1)
