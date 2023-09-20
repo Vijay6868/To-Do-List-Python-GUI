@@ -18,13 +18,15 @@ class AppGUI:
         #self.menuFrame()
 
         self.root.mainloop()
-        
+
+     # configuring form   
     def menuFrame(self):
         frame= tk.Frame(self.root)
         frame.config(bg="light blue",width=650,height=600)
         frame.pack(fill=tk.BOTH, expand=True,)
         return frame
     
+    # side menu bar with all the buttons
     def sideMenu(self):
        
         frSideMenu = tk.Frame(self.root,width=250, height=100)
@@ -42,12 +44,13 @@ class AppGUI:
             self.inputFrame()
         btAddTask.config(command=btAddTask_click)
 
-
+    # styling side menu bar buttons.
     def sideMenuBt(self,frame,textin):
         button = tk.Button(frame, text=textin, font=('Arial',14),bg="gray10",relief="flat",fg="white")
         button.pack(side=tk.TOP,fill= tk.X)
         return button
-        
+
+     # user input frame to enter a new task, sytling fields and labels.   
     def inputFrame(self):
         frame = self.menuFrame()
         lblDate = self.customLabel("Date :",frame)
@@ -64,12 +67,13 @@ class AppGUI:
         lblDescription.grid(row=2, column=0, padx=10, pady=10, sticky="e")
         tbDescription.grid(row=2,column=1, padx=10, pady=10)
 
-      
+      # styling labels
     def customLabel(self, textin,frame):
         label = tk.Label(frame,text=textin, font=('Arial',14),bg="light blue")
         #label.pack(side=tk.LEFT, padx=10, pady=10)
         return label
-
+    
+    # styling methods
     def customField(self,frame):
         textbox = tk.Entry(frame, font=('Arial', 14))
         #textbox.pack(side = tk.LEFT, padx=10, pady=10)
