@@ -58,15 +58,17 @@ class AppGUI:
         lblName = self.customLabel("Title :",frame)
         tbName = self.customField(frame)
         lblDescription = self.customLabel("Description :",frame)
-        tbDescription = self.customField(frame)
-        
+        tbDescription = tk.Text(frame, wrap = tk.WORD, font=('Arial', 14),height=5, width=20)
+        btnAdd = tk.Button(frame,text="Add", font=('Arial',14))
+        btnAdd.pack()
+
         lblDate.grid(row=0, column=0, padx=10, pady=10, sticky="e")
         tbDate.grid(row=0, column=1, padx=10, pady=10)
         lblName.grid(row=1, column=0, padx=10, pady=10, sticky="e")
         tbName.grid(row=1, column=1, padx=10, pady=10, )
         lblDescription.grid(row=2, column=0, padx=10, pady=10, sticky="e")
         tbDescription.grid(row=2,column=1, padx=10, pady=10)
-
+        btnAdd.grid(row=3,column=1,padx=10,pady=10)
       # styling labels
     def customLabel(self, textin,frame):
         label = tk.Label(frame,text=textin, font=('Arial',14),bg="light blue")
@@ -77,6 +79,7 @@ class AppGUI:
     def customField(self,frame):
         textbox = tk.Entry(frame, font=('Arial', 14))
         #textbox.pack(side = tk.LEFT, padx=10, pady=10)
+       
         return textbox
 
 app =AppGUI()
